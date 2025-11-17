@@ -168,6 +168,10 @@ article {
     border-radius: inherit;
     z-index: -1;
   }
+
+  ion-icon {
+    --ionicon-stroke-width: 35px;
+  }
 }
 
 .image-box {
@@ -178,11 +182,50 @@ article {
   align-items: flex-end;
 }
 
+article {
+  display: none;
+  &.active {
+    display: block;
+    animation: fade 0.5s ease backwards;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.h2,
+.h3,
+.h4,
+.h5 {
+  color: var(--white2);
+  text-transform: capitalize;
+}
+
+.h2 {
+  font-size: var(--fs1);
+}
+.h3 {
+  font-size: var(--fs2);
+}
+.h4 {
+  font-size: var(--fs4);
+}
+.h5 {
+  font-size: var(--fs7);
+  font-weight: var(--fw500);
+}
+
 .article-title {
   padding-bottom: 7px;
   position: relative;
 
-  &::before {
+  &::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -193,8 +236,6 @@ article {
     border-radius: 3px;
   }
 }
-
-
 
 .content-card {
   position: relative;
@@ -232,8 +273,11 @@ article {
     background: var(--eerie-black2);
     position: relative;
     margin-bottom: 15px;
-    max-height: 405px;
+    max-height: 112px;
     transition: var(--transition2);
+    &.active {
+      max-height: 405px;
+    }
 
     button.show-contacts {
       position: absolute;
@@ -372,9 +416,31 @@ article {
   }
 
   /* End Sidebar */
+
   /* Start Main */
 
   main {
+    nav {
+      height: 60px;
+      position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        li {
+          a {
+            color: gray;
+            height: 60px;
+          }
+        }
+      }
+    }
   }
 
   /* End Main */
