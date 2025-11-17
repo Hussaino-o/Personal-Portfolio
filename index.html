@@ -1,12 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Personal Portfolio</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="favicon.png" href="images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Personal Portfolio</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <button class="show-contacts">
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+        <div class="main-info">
+          <figure class="personal-image image-box">
+            <img src="images/my-photo.png" alt="personal-image" />
+          </figure>
+
+          <div class="info">
+            <h1>Hussein Ali</h1>
+            <p class="job-title">FrontEnd Developer</p>
+          </div>
+        </div>
+
+        <div class="sidebar-info-more active">
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <div class="email contact-info">
+                <p class="title">Email</p>
+                <a class="info" href="">helloworldfinle@gmail.com</a>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+              <div class="phone contact-info">
+                <p class="title">Phone</p>
+                <a class="info" href="">+9647887514389</a>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+              <div class="birthday contact-info">
+                <p class="title">Birthday</p>
+                <time class="info" datetime="2001-10-15">October 15, 2001</time>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+              <div class="location contact-info">
+                <p class="title">Location</p>
+                <address class="info">Al-Nasiriyah, Iraq</address>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="social-links">
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100085783848908"
+                ><ion-icon name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a href=""><ion-icon name="logo-twitter"></ion-icon></a>
+            </li>
+            <li>
+              <a href=""><ion-icon name="logo-instagram"></ion-icon></a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <main></main>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
