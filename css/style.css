@@ -137,6 +137,7 @@ article {
   padding: 15px;
   border-radius: var(--br);
   overflow: hidden;
+  background: var(--eerie-black2);
 }
 
 .separator {
@@ -180,6 +181,9 @@ article {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  img {
+    min-width: 100%;
+  }
 }
 
 article {
@@ -199,18 +203,18 @@ article {
   }
 }
 
-.h2,
-.h3,
-.h4,
-.h5 {
+h2,
+h3,
+h4,
+h5 {
   color: var(--white2);
   text-transform: capitalize;
 }
 
-.h2 {
+h2 {
   font-size: var(--fs1);
 }
-.h3 {
+/* .h3 {
   font-size: var(--fs2);
 }
 .h4 {
@@ -219,7 +223,7 @@ article {
 .h5 {
   font-size: var(--fs7);
   font-weight: var(--fw500);
-}
+} */
 
 .article-title {
   padding-bottom: 7px;
@@ -237,11 +241,29 @@ article {
   }
 }
 
+.has-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background: var(--onyx);
+  border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--orange-yellow-crayola);
+  border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+  width: 20px;
+}
+
 .content-card {
   position: relative;
   background: var(--border-gradient-onyx);
   padding: 15px;
-  padding-top: 45px;
   border-radius: 14px;
   box-shadow: var(--shadow2);
   cursor: pointer;
@@ -262,7 +284,6 @@ article {
 .container {
   display: flex;
   justify-content: center;
-  gap: 30px;
   margin: 15px 12px 75px;
   flex-direction: column;
   min-width: 259px;
@@ -270,7 +291,6 @@ article {
   /* Start Sidebar */
 
   aside.sidebar {
-    background: var(--eerie-black2);
     position: relative;
     margin-bottom: 15px;
     max-height: 112px;
@@ -420,27 +440,178 @@ article {
   /* Start Main */
 
   main {
-    nav {
-      height: 60px;
-      position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-      ul {
+    /* Start Navbar */
+
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: hsla(240, 1%, 17%, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--jet);
+      border-radius: 12px 12px 0 0;
+      box-shadow: var(--shadow2);
+      z-index: 5;
+
+      .navbar-list {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        flex-wrap: wrap;
+        padding: 0 10px;
 
         li {
-          a {
-            color: gray;
-            height: 60px;
+          button {
+            color: var(--light-gray);
+            transition: color var(--transition1);
+            padding: 20px 7px;
+            font-size: var(--fs8);
+            &.active {
+              color: var(--orange-yellow-crayola);
+            }
+            &:hover,
+            &:focus {
+              color: var(--light-gray70);
+            }
           }
         }
       }
     }
+
+    /* End Navbar */
+
+    /* Start About */
+
+    article.about {
+      header h2 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      section.about-info {
+        padding: 0px 10px;
+        color: var(--light-gray);
+        font-size: var(--fs6);
+        font-weight: var(--fw300);
+        line-height: 1.6;
+        p {
+          margin-bottom: 15px;
+        }
+      }
+      section.service {
+        margin-bottom: 35px;
+
+        h3 {
+          margin-bottom: 20px;
+        }
+        ul.service-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+
+          li {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+
+            img {
+              margin-bottom: 10px;
+            }
+
+            .service-card-info {
+              h4 {
+                margin-bottom: 7px;
+              }
+
+              p {
+                color: var(--light-gray);
+                font-size: var(--fs6);
+                font-weight: var(--fw300);
+                line-height: 1.6;
+              }
+            }
+          }
+        }
+      }
+      section.testimonials {
+        margin-bottom: 35px;
+
+        h3 {
+          margin-bottom: 20px;
+        }
+        ul.testimonials-list {
+          padding: 25px 15px;
+          padding-bottom: 35px;
+          margin: 0 -15px;
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          overflow-x: auto;
+          overscroll-behavior-inline: contain;
+          scroll-snap-type: inline mandatory;
+          li {
+            padding-top: 45px;
+            min-width: 100%;
+            scroll-snap-align: center;
+            figure {
+              width: 60px;
+              height: 60px;
+              border-radius: 14px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              transform: translate(15px, -25px);
+              img {
+              }
+            }
+            h4 {
+            }
+            p {
+              color: var(--light-gray);
+              font-size: var(--fs6);
+              font-weight: var(--fw300);
+              line-height: 1.6;
+            }
+          }
+        }
+      }
+      section.clients {
+        margin-bottom: 15px;
+        h3 {
+        }
+        ul.clients-list {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 15px;
+          margin: 0 -15px;
+          padding: 25px;
+          overflow-x: auto;
+          overscroll-behavior-inline: contain;
+          scroll-snap-type: inline mandatory;
+          scroll-padding-inline: 15px;
+          li {
+            min-width: 50%;
+            scroll-snap-align: start;
+            a {
+              img {
+                width: 100%;
+                filter: grayscale(1);
+                transition: var(--transition1);
+                &:hover {
+                  filter: grayscale(0);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* End About */
   }
 
   /* End Main */
