@@ -593,6 +593,84 @@ h5 {
             }
           }
         }
+
+        .testimonials-card {
+          position: fixed;
+          inset: 0;
+          z-index: 99999;
+          background-color: hsl(0, 0%, 5%);
+          display: none;
+          &.active {
+            display: block;
+          }
+
+          .testimonial-show-card {
+            border: 1px solid var(--jet);
+            padding: 15px;
+            border-radius: var(--br);
+            overflow: hidden;
+            background: var(--eerie-black2);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            width: calc(100% - 25px);
+            &::before {
+              content: "";
+              position: absolute;
+            }
+
+            .exit-button {
+              position: absolute;
+              top: 15px;
+              right: 15px;
+              background: var(--onyx);
+              border-radius: 8px;
+              width: 32px;
+              height: 32px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: var(--white2);
+              font-size: 18px;
+              opacity: 0.7;
+              cursor: pointer;
+              &:hover {
+                opacity: 1;
+              }
+
+              ion-icon {
+                --ionicon-stroke-width: 50px;
+              }
+            }
+
+            figure {
+              width: 80px;
+              height: 80px;
+              border-radius: var(--br);
+              margin-bottom: 15px;
+              img {
+                min-width: 100%;
+              }
+            }
+            h4 {
+              margin-bottom: 5px;
+            }
+            time {
+              font-size: var(--fs6);
+              color: var(--light-gray70);
+              font-weight: var(--fw500);
+              margin-bottom: 10px;
+            }
+            p {
+              color: var(--light-gray);
+              font-size: var(--fs6);
+              font-weight: var(--fw300);
+              line-height: 1.6;
+            }
+          }
+        }
       }
 
       /* Start Clients Section */
@@ -615,7 +693,7 @@ h5 {
           li {
             min-width: 50%;
             scroll-snap-align: start;
-            
+
             a {
               img {
                 width: 100%;
