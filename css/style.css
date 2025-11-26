@@ -214,16 +214,16 @@ h5 {
 h2 {
   font-size: var(--fs1);
 }
-/* .h3 {
+h3 {
   font-size: var(--fs2);
 }
-.h4 {
+h4 {
   font-size: var(--fs4);
 }
-.h5 {
+h5 {
   font-size: var(--fs7);
   font-weight: var(--fw500);
-} */
+}
 
 .article-title {
   padding-bottom: 7px;
@@ -266,7 +266,6 @@ h2 {
   padding: 15px;
   border-radius: 14px;
   box-shadow: var(--shadow2);
-  cursor: pointer;
   z-index: 1;
 
   &::before {
@@ -489,25 +488,34 @@ h2 {
         margin-top: 15px;
         margin-bottom: 15px;
       }
+
+      /* Start About Info Section */
+
       section.about-info {
         padding: 0px 10px;
         color: var(--light-gray);
         font-size: var(--fs6);
         font-weight: var(--fw300);
         line-height: 1.6;
+
         p {
           margin-bottom: 15px;
+          text-align: justify;
         }
       }
+
+      /* Start Service Section */
+
       section.service {
         margin-bottom: 35px;
 
         h3 {
           margin-bottom: 20px;
         }
+
         ul.service-list {
-          display: flex;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: 1fr;
           gap: 20px;
 
           li {
@@ -515,7 +523,6 @@ h2 {
             align-items: center;
             flex-direction: column;
             text-align: center;
-            width: 100%;
 
             img {
               margin-bottom: 10px;
@@ -536,52 +543,63 @@ h2 {
           }
         }
       }
+
+      /* Start Testimonials Section */
+
       section.testimonials {
         margin-bottom: 35px;
 
         h3 {
           margin-bottom: 20px;
         }
+
         ul.testimonials-list {
-          padding: 25px 15px;
-          padding-bottom: 35px;
-          margin: 0 -15px;
           display: flex;
-          gap: 15px;
           align-items: center;
+          justify-content: flex-start;
+          padding: 25px 15px 35px;
+          margin: 0 -15px;
+          gap: 15px;
           overflow-x: auto;
           overscroll-behavior-inline: contain;
           scroll-snap-type: inline mandatory;
+
           li {
             padding-top: 45px;
             min-width: 100%;
             scroll-snap-align: center;
+            cursor: pointer;
+
             figure {
-              width: 60px;
-              height: 60px;
-              border-radius: 14px;
               position: absolute;
               top: 0;
               left: 0;
+              width: 60px;
+              height: 60px;
+              border-radius: 14px;
               transform: translate(15px, -25px);
-              img {
-              }
             }
-            h4 {
-            }
+
             p {
               color: var(--light-gray);
               font-size: var(--fs6);
               font-weight: var(--fw300);
               line-height: 1.6;
+              display: -webkit-box;
+              line-clamp: 4;
+              -webkit-line-clamp: 4;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
             }
           }
         }
       }
+
+      /* Start Clients Section */
+
       section.clients {
         margin-bottom: 15px;
-        h3 {
-        }
+
         ul.clients-list {
           display: flex;
           justify-content: flex-start;
@@ -593,9 +611,11 @@ h2 {
           overscroll-behavior-inline: contain;
           scroll-snap-type: inline mandatory;
           scroll-padding-inline: 15px;
+
           li {
             min-width: 50%;
             scroll-snap-align: start;
+            
             a {
               img {
                 width: 100%;
