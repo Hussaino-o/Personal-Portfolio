@@ -100,7 +100,7 @@
         </nav>
         <article class="about active" data-page="about">
           <header>
-            <h2 class="article-title">About Me</h2>
+            <h2 class="article-title h2">About Me</h2>
           </header>
           <section class="about-info">
             <p>
@@ -118,12 +118,12 @@
             </p>
           </section>
           <section class="service">
-            <h3>What I'm Doing</h3>
+            <h3 class="h3">What I'm Doing</h3>
             <ul class="service-list">
               <li class="content-card">
                 <img src="images/what-im-doing-1.png" alt="icon" width="40" />
                 <div class="service-card-info">
-                  <h4>Web Design</h4>
+                  <h4 class="h4">Web Design</h4>
                   <p>
                     The most modern and high-quality design made at a
                     professional level.
@@ -133,7 +133,7 @@
               <li class="content-card">
                 <img src="images/what-im-doing-2.png" alt="icon" width="40" />
                 <div class="service-card-info">
-                  <h4>Web Development</h4>
+                  <h4 class="h4">Web Development</h4>
                   <p>
                     High-quality development of sites at the professional level.
                   </p>
@@ -142,7 +142,7 @@
               <li class="content-card">
                 <img src="images/what-im-doing-3.png" alt="icon" width="40" />
                 <div class="service-card-info">
-                  <h4>Mobile Apps</h4>
+                  <h4 class="h4">Mobile Apps</h4>
                   <p>
                     Professional development of applications for iOS and
                     Android.
@@ -152,7 +152,7 @@
               <li class="content-card">
                 <img src="images/what-im-doing-4.png" alt="icon" width="40" />
                 <div class="service-card-info">
-                  <h4>Photography</h4>
+                  <h4 class="h4">Photography</h4>
                   <p>
                     I make high-quality photos of any category at a professional
                     level.
@@ -162,16 +162,16 @@
             </ul>
           </section>
           <section class="testimonials">
-            <h3>Testimonials</h3>
+            <h3 class="h3">Testimonials</h3>
             <ul class="testimonials-list has-scrollbar">
-              <li class="content-card">
+              <li class="content-card" data-name="DanielLewis">
                 <figure class="image-box">
                   <img
                     src="https://i.postimg.cc/zGDHfn3G/avatar-1.png"
                     alt=""
                   />
                 </figure>
-                <h4>Daniel Lewis</h4>
+                <h4 class="h4">Daniel Lewis</h4>
                 <p>
                   Richard was hired to create a corporate identity. It's modern,
                   clean and with a beautiful design that got a lot of praises
@@ -180,28 +180,28 @@
                   about the needs of client.
                 </p>
               </li>
-              <li class="content-card">
+              <li class="content-card" data-name="JessicaMiller">
                 <figure class="image-box">
                   <img
                     src="https://i.postimg.cc/DwY0yHtx/avatar-2.png"
                     alt=""
                   />
                 </figure>
-                <h4>Jessica Miller</h4>
+                <h4 class="h4">Jessica Miller</h4>
                 <p>
                   Working with Richard has been an absolute pleasure. I was
                   impressed with his attention to detail, his web design skills
                   and his professional approach to our timelines and processes.
                 </p>
               </li>
-              <li class="content-card">
+              <li class="content-card" data-name="EmilyEvans">
                 <figure class="image-box">
                   <img
                     src="https://i.postimg.cc/fRFWhX9F/avatar-3.png"
                     alt=""
                   />
                 </figure>
-                <h4>Emily Evans</h4>
+                <h4 class="h4">Emily Evans</h4>
                 <p>
                   I couldn't be happier with the website that Richard created
                   for us. His attention to detail and creativity is unmatched.
@@ -209,14 +209,14 @@
                   significantly improved our brand image.
                 </p>
               </li>
-              <li class="content-card">
+              <li class="content-card" data-name="HenryWilliams">
                 <figure class="image-box">
                   <img
                     src="https://i.postimg.cc/zXv1Xv81/avatar-4.png"
                     alt=""
                   />
                 </figure>
-                <h4>Henry Williams</h4>
+                <h4 class="h4">Henry Williams</h4>
                 <p>
                   I was overwhelmed with the thought of redesigning my online
                   store, but Richard made the process seamless. The site is not
@@ -227,31 +227,40 @@
             </ul>
 
             <div class="testimonials-card">
-            <div class="overlay"></div>
-            <div class="testimonial-show-card">
-              <button class="exit-button">
-                <ion-icon name="close-outline"></ion-icon>
-              </button>
-              <figure class="image-box">
-                <img src="https://i.postimg.cc/zGDHfn3G/avatar-1.png" alt="" />
-              </figure>
-              <h4>Daniel Lewis</h4>
-              <time datetime="">14 June, 2023</time>
-              <p>
-                Richard was hired to create a corporate identity. It's modern,
-                clean and with a beautiful design that got a lot of praises from
-                colleagues and visitors. We were very pleased with the work
-                done. He has a lot of experience and is very concerned about the
-                needs of client.
-              </p>
+              <div class="overlay"></div>
+              <div class="testimonial-show-card">
+                <button class="exit-button">
+                  <ion-icon name="close-outline"></ion-icon>
+                </button>
+                <div class="images">
+                  <figure class="image-box">
+                    <img
+                      src="https://i.postimg.cc/zGDHfn3G/avatar-1.png"
+                      alt=""
+                    />
+                  </figure>
+                  <img
+                    src="https://i.postimg.cc/mZ00RwX7/icon-quote.png"
+                    alt="quote icon"
+                  />
+                </div>
+                <div class="card-info">
+                  <h4 class="h3">Daniel Lewis</h4>
+                  <time datetime="">14 June, 2023</time>
+                  <p>
+                    Richard was hired to create a corporate identity. It's
+                    modern, clean and with a beautiful design that got a lot of
+                    praises from colleagues and visitors. We were very pleased
+                    with the work done. He has a lot of experience and is very
+                    concerned about the needs of client.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
           </section>
 
-          
-
           <section class="clients">
-            <h3>Clients</h3>
+            <h3 class="h3">Clients</h3>
             <ul class="clients-list has-scrollbar">
               <li>
                 <a href="">
