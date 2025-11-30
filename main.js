@@ -70,3 +70,11 @@ testimonialsCardExitButton.addEventListener("click", () =>
 testimonialsCardOverlay.addEventListener("click", () =>
   testimonialsShowCard.classList.remove("active")
 );
+
+
+const articles = document.querySelectorAll(".container main article")
+const navButtons = document.querySelectorAll('.container main nav ul li button')
+
+
+
+

@@ -402,10 +402,6 @@ h5 {
             .info {
               color: var(--white2);
               font-size: var(--fs7);
-
-              a {
-                color: inherit;
-              }
             }
             address {
               font-style: normal;
@@ -710,12 +706,13 @@ h5 {
           margin: 0 -15px;
           padding: 25px;
           overflow-x: auto;
+          scroll-behavior: smooth;
           overscroll-behavior-inline: contain;
           scroll-snap-type: inline mandatory;
-          scroll-padding-inline: 15px;
+          scroll-padding-inline: 25px;
 
           li {
-            min-width: 50%;
+            min-width: calc(100% / 2);
             scroll-snap-align: start;
 
             a {
@@ -734,6 +731,128 @@ h5 {
     }
 
     /* End About */
+
+    /* START RESUME ARTICLE */
+
+    article.resume {
+      header h2 {
+        margin-bottom: 30px;
+      }
+
+      section.education,
+      section.experience {
+        margin-bottom: 30px;
+
+        .education-title,
+        .experience-title {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          margin-bottom: 25px;
+          .icon-box {
+            ion-icon {
+            }
+          }
+          h3 {
+          }
+        }
+        ol.education-list,
+        ol.experience-list {
+          margin-left: 45px;
+          font-size: var(--fs6);
+
+          li.education-item,
+          li.experience-item {
+            margin-bottom: 20px;
+            position: relative;
+            &:not(:last-child)::before {
+              content: "";
+              position: absolute;
+              top: -25px;
+              left: -30px;
+              width: 1px;
+              height: calc(100% + 50px);
+              background: var(--jet);
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              top: 5px;
+              left: -33px;
+              height: 6px;
+              width: 6px;
+              border-radius: 50%;
+              background: var(--text-gradient-yellow);
+              box-shadow: 0 0 0 4px var(--jet);
+            }
+
+            h4 {
+              margin-bottom: 7px;
+              position: relative;
+            }
+
+            time {
+              color: var(--vegas-gold);
+              font-weight: var(--fw400);
+              line-height: 1.6;
+            }
+
+            p {
+              color: var(--light-gray);
+              font-weight: var(--fw300);
+              line-height: 1.6;
+              text-align: justify;
+            }
+          }
+        }
+      }
+      section.skills {
+        h3 {
+          margin-bottom: 20px;
+        }
+        ul.skills-container {
+          padding: 20px;
+
+          li.skill {
+            cursor: pointer;
+            &:not(:last-child) {
+              margin-bottom: 15px;
+            }
+
+            .title-wrapper {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              margin-bottom: 8px;
+
+              h5.skill-title {
+                font-size: var(--fs7);
+                font-weight: var(--fw500);
+              }
+              data {
+                color: var(--light-gray);
+                font-size: var(--fs7);
+                font-weight: var(--fw300);
+              }
+            }
+            .progress-bar {
+              background: var(--jet);
+              width: 100%;
+              height: 8px;
+              border-radius: 10px;
+
+              .progress {
+                background: var(--text-gradient-yellow);
+                height: 100%;
+                border-radius: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* END RESUME ARTICLE */
   }
 
   /* End Main */
@@ -742,6 +861,12 @@ h5 {
 /* End Container */
 
 /*START MEDIA QUERIES*/
+
+@media (min-width: 450px) {
+  .container main article.about section.clients ul.clients-list li {
+    min-width: calc((100% - 30px) / 3);
+  }
+}
 
 @media (min-width: 580px) {
   :root {
@@ -756,9 +881,13 @@ h5 {
 
   article,
   .sidebar {
+    padding: 30px;
+  }
+
+  main,
+  .sidebar {
     width: 520px;
     margin-inline: auto;
-    padding: 30px;
   }
 
   .icon-box {
@@ -935,10 +1064,45 @@ h5 {
 
         section.clients {
           ul.clients-list {
+            margin: 0 -30px;
             padding: 45px;
+            scroll-padding-inline: 45px;
+          }
+        }
+      }
 
-            li {
-              min-width: calc(100% / 3);
+      article.resume {
+        header h2 {
+          font-weight: var(--fw600);
+          padding-bottom: 15px;
+        }
+
+        section.education,
+        section.experience {
+          ol.education-list,
+          ol.experience-list {
+            margin-left: 65px;
+
+            li.education-item,
+            li.experience-item {
+              &:not(:last-child)::before {
+                left: -40px;
+              }
+              &::after {
+                height: 8px;
+                width: 8px;
+                left: -43px;
+              }
+            }
+          }
+        }
+
+        section.skills {
+          ul.skills-container {
+            padding: 30px;
+            padding-top: 25px;
+            li.skill:not(:last-child) {
+              margin-bottom: 25px;
             }
           }
         }
@@ -948,7 +1112,7 @@ h5 {
 }
 
 @media (min-width: 768px) {
-  article,
+  main,
   .sidebar {
     width: 700px;
   }
@@ -999,12 +1163,11 @@ h5 {
             }
           }
         }
-        section.clients {
-          ul.clients-list {
-            li {
-              min-width: calc(100% / 3.5);
-            }
-          }
+      }
+
+      article.resume {
+        header h2 {
+          padding-bottom: 20px;
         }
       }
     }
@@ -1020,21 +1183,38 @@ h5 {
 
   .sidebar,
   article {
-    width: 950px;
     box-shadow: var(--shadow5);
   }
 
+  main,
+  .sidebar {
+    width: 950px;
+  }
+
   .container {
+    margin-bottom: 60px;
+
     main {
       position: relative;
 
       .navbar {
         position: absolute;
-        width: 535px;
+        width: max-content;
         top: 0;
         right: 0;
         left: auto;
         bottom: auto;
+        border-radius: 0 20px;
+        padding: 0 20px;
+        box-shadow: none;
+        .navbar-list {
+          gap: 30px;
+          padding: 0 20px;
+
+          li {
+            font-weight: var(--fw500);
+          }
+        }
       }
 
       article.about {
@@ -1049,15 +1229,105 @@ h5 {
               min-width: calc(50% - 15px);
             }
           }
+          .testimonials-card {
+            .testimonial-show-card {
+              max-width: 680px;
+            }
+          }
         }
         section.clients {
           ul.clients-list {
+            gap: 25px;
             li {
-              min-width: calc(100% / 4);
+              min-width: calc((100% - 30px) / 4);
             }
           }
         }
       }
+    }
+  }
+}
+
+@media (min-width: 1250px) {
+  body::-webkit-scrollbar {
+    width: 20px;
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--smoky-black);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border: 5px solid var(--smoky-black);
+    background: hsla(0, 0%, 100%, 0.1);
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
+      inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: hsla(0, 0%, 100%, 0.15);
+  }
+  body::-webkit-scrollbar-button {
+    height: 60px;
+  }
+
+  .container {
+    gap: 25px;
+    flex-direction: row;
+    max-width: 1200px;
+    margin-inline: auto;
+
+    aside.sidebar {
+      padding: 60px 30px 30px;
+      max-height: max-content;
+      height: 100%;
+      position: sticky;
+      top: 60px;
+      z-index: 1;
+
+      button.show-contacts {
+        display: none;
+      }
+
+      .main-info {
+        flex-direction: column;
+
+        figure.personal-image {
+          width: 150px;
+          height: 150px;
+          img {
+          }
+        }
+      }
+      .sidebar-info-more {
+        opacity: 1;
+        visibility: visible;
+
+        .contacts-list {
+          grid-template-columns: 1fr;
+
+          .contact-item {
+            .contact-info {
+              .info {
+                --fs7: 14px;
+              }
+              a.info {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+
+        ul.social-links {
+          justify-content: center;
+          margin: 30px 0 0 0;
+        }
+      }
+    }
+
+    main {
+      min-width: 75%;
+      width: 75%;
     }
   }
 }
