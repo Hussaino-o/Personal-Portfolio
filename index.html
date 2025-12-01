@@ -91,14 +91,20 @@
       <main>
         <nav class="navbar">
           <ul class="navbar-list">
-            <li><button class="about active">About</button></li>
-            <li><button class="resume">Resume</button></li>
-            <li><button class="portfolio">Portfolio</button></li>
-            <li><button class="blog">Blog</button></li>
-            <li><button class="contact">Contact</button></li>
+            <li>
+              <button class="about active" data-page="about">About</button>
+            </li>
+            <li><button class="resume" data-page="resume">Resume</button></li>
+            <li>
+              <button class="portfolio" data-page="portfolio">Portfolio</button>
+            </li>
+            <li><button class="blog" data-page="blog">Blog</button></li>
+            <li>
+              <button class="contact" data-page="contact">Contact</button>
+            </li>
           </ul>
         </nav>
-        <article class="about" data-page="about">
+        <article class="about active" data-page="about">
           <header>
             <h2 class="article-title h2">About Me</h2>
           </header>
@@ -312,7 +318,7 @@
             </ul>
           </section>
         </article>
-        <article class="resume active" data-page="resume">
+        <article class="resume" data-page="resume">
           <header>
             <h2 class="article-title h2">Resume</h2>
           </header>
@@ -405,7 +411,7 @@
                   <data value="80%">80%</data>
                 </div>
                 <div class="progress-bar">
-                  <div class="progress" style="width: 80%;"></div>
+                  <div class="progress" style="width: 80%"></div>
                 </div>
               </li>
               <li class="skill">
@@ -414,7 +420,7 @@
                   <data value="70%">70%</data>
                 </div>
                 <div class="progress-bar">
-                  <div class="progress" style="width: 70%;"></div>
+                  <div class="progress" style="width: 70%"></div>
                 </div>
               </li>
               <li class="skill">
@@ -423,7 +429,7 @@
                   <data value="90%">90%</data>
                 </div>
                 <div class="progress-bar">
-                  <div class="progress" style="width: 90%;"></div>
+                  <div class="progress" style="width: 90%"></div>
                 </div>
               </li>
               <li class="skill">
@@ -432,8 +438,235 @@
                   <data value="50%">50%</data>
                 </div>
                 <div class="progress-bar">
-                  <div class="progress" style="width: 50%;"></div>
+                  <div class="progress" style="width: 50%"></div>
                 </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+        <article class="portfolio" data-page="portfolio">
+          <header>
+            <h2 class="article-title h2">Portfolio</h2>
+          </header>
+          <section class="portfolio-projects">
+            <ul class="filter-list">
+              <li><button class="active" id="all">All</button></li>
+              <li><button id="web-design">Web Design</button></li>
+              <li><button id="applications">Applications</button></li>
+              <li><button id="web-development">Web Development</button></li>
+            </ul>
+            <div class="filter-select-box">
+              <button class="filter-button">
+                <div class="filter-title">Select Category</div>
+                <div class="chevron-icons">
+                  <ion-icon
+                    name="chevron-up"
+                    role="img"
+                    class="md hydrated"
+                  ></ion-icon>
+                  <ion-icon
+                    name="chevron-down"
+                    role="img"
+                    class="md hydrated"
+                  ></ion-icon>
+                </div>
+              </button>
+              <ul class="options">
+                <li><button id="all">All</button></li>
+                <li><button id="web-design">Web Design</button></li>
+                <li><button id="applications">Applications</button></li>
+                <li><button id="web-development">Web Development</button></li>
+              </ul>
+            </div>
+            <ul class="projects">
+              <li class="project web-development">
+                <a href="">
+                  <figure class="project-image-box">
+                    <img
+                      src="https://i.postimg.cc/qRHpHMyd/project-1.jpg"
+                      alt="project-image"
+                    />
+                    <div class="show-icon-box">
+                      <ion-icon
+                        name="eye-outline"
+                        role="img"
+                        class="md hydrated"
+                      ></ion-icon>
+                    </div>
+                  </figure>
+                  <div class="info">
+                    <h4>Finance</h4>
+                    <p>Web Development</p>
+                  </div>
+                </a>
+              </li>
+              <li class="project web-development">
+                <a href="">
+                  <figure class="project-image-box">
+                    <img
+                      src="https://i.postimg.cc/bNrcM2Wt/project-2.png"
+                      alt="project-image"
+                    />
+                    <div class="show-icon-box">
+                      <ion-icon
+                        name="eye-outline"
+                        role="img"
+                        class="md hydrated"
+                      ></ion-icon>
+                    </div>
+                  </figure>
+                  <div class="info">
+                    <h4>Orizon</h4>
+                    <p>Web Development</p>
+                  </div>
+                </a>
+              </li>
+              <li class="project web-design">
+                <a href="">
+                  <figure class="project-image-box">
+                    <img
+                      src="https://i.postimg.cc/jSJVqYsq/project-3.jpg"
+                      alt="project-image"
+                    />
+                    <div class="show-icon-box">
+                      <ion-icon
+                        name="eye-outline"
+                        role="img"
+                        class="md hydrated"
+                      ></ion-icon>
+                    </div>
+                  </figure>
+                  <div class="info">
+                    <h4>Fundo</h4>
+                    <p>Web Design</p>
+                  </div>
+                </a>
+              </li>
+              <li class="project applications">
+                <a href="">
+                  <figure class="project-image-box">
+                    <img
+                      src="https://i.postimg.cc/dtpXxNGb/project-4.png"
+                      alt="project-image"
+                    />
+                    <div class="show-icon-box">
+                      <ion-icon
+                        name="eye-outline"
+                        role="img"
+                        class="md hydrated"
+                      ></ion-icon>
+                    </div>
+                  </figure>
+                  <div class="info">
+                    <h4>Brawlhala</h4>
+                    <p>Application</p>
+                  </div>
+                </a>
+              </li>
+              <li class="project web-design">
+                <a href="">
+                  <figure class="project-image-box">
+                    <img
+                      src="https://i.postimg.cc/43T0JKLw/project-5.png"
+                      alt="project-image"
+                    />
+                    <div class="show-icon-box">
+                      <ion-icon
+                        name="eye-outline"
+                        role="img"
+                        class="md hydrated"
+                      ></ion-icon>
+                    </div>
+                  </figure>
+                  <div class="info">
+                    <h4>DSM.</h4>
+                    <p>Web Design</p>
+                  </div>
+                </a>
+              </li>
+              <li class="project web-design">
+                <a href="">
+                  <figure class="project-image-box">
+                    <img
+                      src="https://i.postimg.cc/qR1DX1kZ/project-6.png"
+                      alt="project-image"
+                    />
+                    <div class="show-icon-box">
+                      <ion-icon
+                        name="eye-outline"
+                        role="img"
+                        class="md hydrated"
+                      ></ion-icon>
+                    </div>
+                  </figure>
+                  <div class="info">
+                    <h4>Metaspark</h4>
+                    <p>Web Design</p>
+                  </div>
+                </a>
+              </li>
+              <li class="project web-development">
+                <a href="">
+                  <figure class="project-image-box">
+                    <img
+                      src="https://i.postimg.cc/Kj4q9tjc/project-7.png"
+                      alt="project-image"
+                    />
+                    <div class="show-icon-box">
+                      <ion-icon
+                        name="eye-outline"
+                        role="img"
+                        class="md hydrated"
+                      ></ion-icon>
+                    </div>
+                  </figure>
+                  <div class="info">
+                    <h4>Summary</h4>
+                    <p>Web Development</p>
+                  </div>
+                </a>
+              </li>
+              <li class="project applications">
+                <a href="">
+                  <figure class="project-image-box">
+                    <img
+                      src="https://i.postimg.cc/rw2j4B1w/project-8.jpg"
+                      alt="project-image"
+                    />
+                    <div class="show-icon-box">
+                      <ion-icon
+                        name="eye-outline"
+                        role="img"
+                        class="md hydrated"
+                      ></ion-icon>
+                    </div>
+                  </figure>
+                  <div class="info">
+                    <h4>Task Manager</h4>
+                    <p>Applications</p>
+                  </div>
+                </a>
+              </li>
+              <li class="project web-development">
+                <a href="">
+                  <figure class="project-image-box">
+                    <img
+                      src="https://i.postimg.cc/7LxNsSQv/project-9.png"
+                      alt="project-image"
+                    />
+                    <div class="show-icon-box">
+                      <ion-icon
+                        name="eye-outline"
+                        role="img"
+                        class="md hydrated"
+                      ></ion-icon>
+                    </div>
+                  </figure>
+                  <div class="info">
+                    <h4>Arrival</h4>
+                    <p>Web Development</p>
+                  </div>
+                </a>
               </li>
             </ul>
           </section>

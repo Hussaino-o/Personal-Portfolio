@@ -71,10 +71,80 @@ testimonialsCardOverlay.addEventListener("click", () =>
   testimonialsShowCard.classList.remove("active")
 );
 
+const test = document.querySelector(".container main article.about");
 
-const articles = document.querySelectorAll(".container main article")
-const navButtons = document.querySelectorAll('.container main nav ul li button')
+const articles = document.querySelectorAll(".container main article");
+const navButtons = document.querySelectorAll(
+  ".container main nav ul li button"
+);
 
+navButtons.forEach((button) =>
+  button.addEventListener("click", () => {
+    articles.forEach((article) => {
+      article.classList.remove("active");
+    });
+    navButtons.forEach((button) => {
+      button.classList.remove("active");
+    });
 
+    button.classList.add("active");
 
+    articles.forEach((article) => {
+      if (
+        button.getAttribute("data-page") === article.getAttribute("data-page")
+      ) {
+        article.classList.add("active");
+      }
+    });
+  })
+);
 
+const portfolioSelectButton = document.querySelector(
+  ".portfolio .filter-button"
+);
+const portfolioSelectButtons = document.querySelectorAll(
+  ".portfolio .filter-select-box ul.options button"
+);
+const portfolioButtons = document.querySelectorAll(
+  ".portfolio .filter-list li button"
+);
+const portfolioSelectTitle = document.querySelector(
+  ".portfolio .filter-select-box .filter-title"
+);
+const portfolioProjects = document.querySelectorAll(
+  ".portfolio ul.projects li.project"
+);
+
+portfolioSelectButton.addEventListener("click", () => {
+  portfolioSelectButton.classList.toggle("active");
+  document
+    .querySelector(".portfolio .filter-button [name='chevron-up']")
+    .classList.toggle("active");
+});
+
+portfolioSelectButtons.forEach((selbutton) => {
+  selbutton.addEventListener("click", () => {
+    portfolioSelectTitle.textContent = selbutton.textContent;
+    portfolioSelectButton.click();
+
+    projectFilter(selbutton);
+  });
+});
+portfolioButtons.forEach((selbutton) => {
+  selbutton.addEventListener("click", () => {
+    portfolioButtons.forEach((button) => button.classList.remove("active"));
+    selbutton.classList.add("active")
+
+    projectFilter(selbutton);
+  });
+});
+
+function projectFilter(category) {
+  portfolioProjects.forEach((project) => project.classList.remove("hide"));
+
+  portfolioProjects.forEach((project) => {
+    if (!project.classList.contains(category.id) && category.id !== "all") {
+      project.classList.add("hide");
+    }
+  });
+}
