@@ -148,3 +148,18 @@ function projectFilter(category) {
     }
   });
 }
+
+
+const contactForm = document.querySelector("article.contact section.contact-form form")
+const contactInputs = document.querySelectorAll("article.contact section.contact-form form .data-form-input")
+const contactButton = document.querySelector("article.contact section.contact-form button.form-button")
+
+for(let i = 0; i < contactInputs.length; i++) {
+  contactInputs[i].addEventListener("input", () => {
+    if (contactForm.checkValidity()) {
+      contactButton.removeAttribute("disabled")
+    } else {
+      contactButton.setAttribute("disabled", "")
+    }
+  })
+}
